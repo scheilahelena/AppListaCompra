@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/02/2014 20:18:20 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="entidades.Lista" table="LISTA">
+        <id name="idlista" type="int">
+            <column name="IDLISTA" />
+            <generator class="increment"  />
+        </id>
+        <many-to-one name="usuario" class="entidades.Usuario" fetch="select"  >
+            <column name="IDUSUARIO" />
+        </many-to-one>
+        <property name="delista" type="string">
+            <column name="DELISTA" length="250" not-null="true" />
+        </property>
+        <property name="dtlista" type="timestamp">
+            <column name="DTLISTA" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+     <div class="container">
+    
+    <h:head>
+        <title>Gerenciador de Listas de Compras</title>
+    </h:head>
+    <h:body>
+            <h1>Gerenciador de itens de listas de Compras</h1>
+        <h:form>   
+            
+                Produto:
+                
+            
+               
+   
+                <h:commandButton class="btn" action="#{listaItController.adicionarItemLista()}" value="Inserir novo item na Lista"/>
+                <h:commandButton class="btn" action="#{listaItController.alterarItemLista()}" value="Alterar item"/>
+                <h:commandButton class="btn" action="#{produtoController.prepararAdicionarProduto()}" value=" Cadastrar Produtos"/>
+                
+                <br/>
+            
+             <br/>
+            <h:commandLink action="index" value="Voltar"/>
+        </h:form>
+    </h:body>
+  </div>       
+</html>
+

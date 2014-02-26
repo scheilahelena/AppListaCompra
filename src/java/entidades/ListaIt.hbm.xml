@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/02/2014 20:18:20 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="entidades.ListaIt" table="LISTA_IT">
+        <composite-id name="id" class="entidades.ListaItId">
+            <key-property name="idlista" type="int">
+                <column name="IDLISTA" />
+            </key-property>
+            <key-property name="nuseq" type="int" >
+                <column name="NUSEQ" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="produto" class="entidades.Produto" fetch="select">
+            <column name="IDPRODUTO" />
+        </many-to-one>
+        <property name="idstatus" type="java.lang.Character">
+            <column name="IDSTATUS" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

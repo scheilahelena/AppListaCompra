@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     <link href="css/bootstrap.css" rel="stylesheet"/>
+     <div class="container">
+    <h:head>
+        <title>Gerenciador de Listas de Compras</title>
+    </h:head>
+    <h:body>
+            
+            <h1>Gerenciador de Listas de Compras</h1>
+            
+            <h:form  >
+                Nome da lista: <h:inputText  value="#{listaController.listaCompra.delista}" required="true" requiredMessage="Digite o nome da nova lista." /> <br/>    
+                <h:commandButton class="btn" action="#{listaController.adicionarListaCompra()}" value="Inserir Nova Lista de Compras"/>
+                <h:commandButton class="btn" action="#{listaController.alterarListaCompra()}"     value="Confirmar alteracao"/>
+                <h:commandButton class="btn" action="#{listaItController.prepararAdicionarItemLista()}" value=" Adicionar Itens"/>
+                
+           <br/>
+            
+           <h:dataTable class="table-striped" var="lista"  value="#{listaItController.getListarItensLista(listaController.selected.idlista)}">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Produto" class="span3" />
+                </f:facet>
+                <h:outputText value="#{item.produto}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Comprado" class="checkbox"/>
+                </f:facet>
+                <h:outputText value="#{item.idstatus}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header" class="icon-align-justify" >
+                    <h:outputText value="Alterar" />
+                </f:facet>
+                <h:form>
+                    <h:commandButton class="btn" action="#{listaItController.prepararAlterarItem()}" value="Alterar"/>
+                </h:form>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Excluir"/>
+                </f:facet>
+                <h:form>
+                    <h:commandButton class="btn" action="#{listaItController.excluirItemCompra()}" value="Excluir"/>
+                </h:form>
+            </h:column>
+        </h:dataTable>
+        <br/>
+        <h:form>
+            <br/>            
+           
+        </h:form>
+            <br/>
+            
+          
+            
+        </h:form>
+            
+        <h:form>    
+            <div class="bottom">
+                <h:commandLink action="index" value="Voltar"/>
+            </div> 
+       </h:form>     
+    </h:body>
+         
+  </div>    
+</html>
+

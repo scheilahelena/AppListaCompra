@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.FirebirdDialect</property>
+    <property name="hibernate.connection.driver_class">org.firebirdsql.jdbc.FBDriver</property>
+    <property name="hibernate.connection.url">jdbc:firebirdsql:localhost/3050:C:\Projeto_Lista\Bases de dados\DADOS.FDB</property>
+    <property name="hibernate.connection.username">sysdba</property>
+    <property name="hibernate.connection.password">masterkey</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
+    <mapping resource="entidades/ListaIt.hbm.xml"/>
+    <mapping resource="entidades/Produto.hbm.xml"/>
+    <mapping resource="entidades/Lista.hbm.xml"/>
+    <mapping resource="entidades/Usuario.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

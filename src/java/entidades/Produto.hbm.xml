@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/02/2014 20:18:20 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="entidades.Produto" table="PRODUTO">
+        <id name="idproduto" type="int">
+            <column name="IDPRODUTO" />
+            <generator class="increment"  />
+        </id>
+        <property name="deproduto" type="string">
+            <column name="DEPRODUTO" length="250" not-null="true" />
+        </property>
+        <property name="vlpro" type="big_decimal">
+            <column name="VLPRO" precision="12" scale="4" />
+        </property>
+        <set name="listaIts" table="LISTA_IT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDPRODUTO" />
+            </key>
+            <one-to-many class="entidades.ListaIt" />
+        </set>
+    </class>
+</hibernate-mapping>
